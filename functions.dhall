@@ -18,7 +18,7 @@ let ghRemoteUrl =
 
 let localPath =
         λ(p : types.ProjectId)
-      → "${env:HOME as Text}/projects/${p.language}/${p.repoName}"
+      → "$HOME/projects/${p.language}/${p.repoName}"
 
 let addLocations =
         λ(p : types.ProjectId)
