@@ -17,8 +17,7 @@ let ghRemoteUrl =
       λ(p : types.ProjectId) → "git@github.com:${p.owner}/${p.repoName}.git"
 
 let localPath =
-        λ(p : types.ProjectId)
-      → "$HOME/projects/${p.language}/${p.repoName}"
+      λ(p : types.ProjectId) → "\$HOME/projects/${p.language}/${p.repoName}"
 
 let addLocations =
         λ(p : types.ProjectId)
