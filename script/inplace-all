@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Usages:
+#
+#   ./script/inplace-all format
+#   ./script/inplace-all freeze
+#   ./script/inplace-all lint
+#
+
+set -euo pipefail
+
+script_dir="$(dirname $0)"
+
+find "$script_dir/.." -name '*.dhall' | while read fpath; do
+  dhall $1 --inplace "$fpath"
+done
