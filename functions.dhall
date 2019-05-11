@@ -10,9 +10,6 @@ let buildRepo =
       →   { owner = owner, repoName = repoName, language = language }
         : types.ProjectId
 
-{- Try not to use this. -}
-let myRepo = buildRepo "awseward"
-
 let ghRemoteUrl =
       λ(p : types.ProjectId) → "git@github.com:${p.owner}/${p.repoName}.git"
 
@@ -27,14 +24,8 @@ let mapLocations =
         λ(ps : List types.ProjectId)
       → map types.ProjectId types.ProjectIdWithLocations addLocations ps
 
-in  { myRepo =
-        myRepo
-    , myFs =
-        myRepo "fsharp"
-    , myHs =
-        myRepo "haskell"
-    , myRkt =
-        myRepo "racket"
+in  { buildRepo =
+        buildRepo
     , ghRemoteUrl =
         ghRemoteUrl
     , localPath =
