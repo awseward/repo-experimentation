@@ -7,8 +7,7 @@ let buildRepo =
         λ(owner : Text)
       → λ(language : Text)
       → λ(repoName : Text)
-      →   { owner = owner, repoName = repoName, language = language }
-        : types.ProjectId
+      → { owner, repoName, language } : types.ProjectId
 
 let ghRemoteUrl =
       λ(p : types.ProjectId) → "git@github.com:${p.owner}/${p.repoName}.git"
@@ -24,14 +23,4 @@ let mapLocations =
         λ(ps : List types.ProjectId)
       → map types.ProjectId types.ProjectIdWithLocations addLocations ps
 
-in  { buildRepo =
-        buildRepo
-    , ghRemoteUrl =
-        ghRemoteUrl
-    , localPath =
-        localPath
-    , addLocations =
-        addLocations
-    , mapLocations =
-        mapLocations
-    }
+in  { buildRepo, ghRemoteUrl, localPath, addLocations, mapLocations }

@@ -1,5 +1,3 @@
-{ ProjectId =
-    ./types/ProjectId.dhall
-, ProjectIdWithLocations =
-    ./types/ProjectIdWithLocations.dhall
+{ ProjectId = ./types/ProjectId.dhall
+, ProjectIdWithLocations = ./types/ProjectIdWithLocations.dhall
 }
